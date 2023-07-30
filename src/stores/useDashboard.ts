@@ -294,7 +294,7 @@ export const useDashboard = defineStore('dashboard', {
                 symbol: a.symbol
               }
             })
-          } 
+          }
         })
       })
 
@@ -318,10 +318,31 @@ export const useDashboard = defineStore('dashboard', {
       if(window.location.hostname.search("testnet") > -1) {
         this.networkType = NetworkType.Testnet
       }
+
       const source: Record<string, LocalConfig> =
         this.networkType === NetworkType.Mainnet
-          ? import.meta.glob('../../chains/mainnet/*.json', { eager: true })
-          : import.meta.glob('../../chains/testnet/*.json', { eager: true });
+          ? import.meta.glob([
+            '../../chains/mainnet/chain4energy.json',
+            '../../chains/mainnet/chihuahua.json',
+            '../../chains/mainnet/cosmos.json',
+            '../../chains/mainnet/juno.json',
+            '../../chains/mainnet/lum.json',
+            '../../chains/mainnet/mars.json',
+            '../../chains/mainnet/osmosis.json',
+            '../../chains/mainnet/quicksilver.json',
+            '../../chains/mainnet/umee.json',
+          ], { eager: true })
+          : import.meta.glob([
+            '../../chains/testnet/chain4energy.json',
+            '../../chains/testnet/chihuahua.json',
+            '../../chains/testnet/cosmos.json',
+            '../../chains/testnet/juno.json',
+            '../../chains/testnet/lum.json',
+            '../../chains/testnet/mars.json',
+            '../../chains/testnet/osmosis.json',
+            '../../chains/testnet/quicksilver.json',
+            '../../chains/testnet/umee.json',
+          ], { eager: true });
       Object.values<LocalConfig>(source).forEach((x: LocalConfig) => {
         this.chains[x.chain_name] = fromLocal(x);
       });
