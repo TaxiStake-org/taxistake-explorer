@@ -68,13 +68,13 @@ const isConvertable = computed(() => {
         <button>{{ name }}</button>
       </span>
     </div>
-  </span>  
+  </span>
   <span v-else class="flex"><span class="break-words max-w-5xl">{{ text }}</span>
     <span v-if="isConvertable" @click="toHexOutput = !toHexOutput" class="ml-2 cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
       </svg>
-    </span> 
+    </span>
   </span>
 </template>
 
@@ -112,9 +112,9 @@ const isConvertable = computed(() => {
     margin-bottom: 1rem;
   }
   a {
-      color: #666cff !important;
+      color: #fab005 !important;
   }
-  .h1 > a, .h2> a, .h3> a, .h4> a, .h5> a, .h6> a, h1> a, h2> a, h3> a, h4> a, h5> a, h6> a { 
+  .h1 > a, .h2> a, .h3> a, .h4> a, .h5> a, .h6> a, h1> a, h2> a, h3> a, h4> a, h5> a, h6> a {
     color: inherit !important;
   }
 

@@ -133,7 +133,7 @@ const list = computed(() => {
                 .filter(x => isFeatured(endpoint, x.description))
                 .map((x, i) => ({v: x, rank: 'primary', logo: logo(x.description.identity)}));
         }
-        return []        
+        return []
     }
     return unbondList.value.map((x, i) => ({v: x, rank: 'primary', logo: logo(x.description.identity)}));
 });
@@ -186,7 +186,7 @@ loadAvatars();
 </script>
 <template>
 <div>
-    <div class="bg-base-100 rounded-lg grid sm:grid-cols-1 md:grid-cols-4 p-4" >    
+    <div class="bg-base-100 rounded-lg grid sm:grid-cols-1 md:grid-cols-4 p-4" >
         <div class="flex">
             <span>
                 <div class="relative w-9 h-9 rounded overflow-hidden flex items-center justify-center mr-2">
@@ -210,7 +210,7 @@ loadAvatars();
                 <div class="font-bold">{{ formatSeconds(staking.params?.unbonding_time) }}</div>
                 <div class="text-xs">{{ $t('staking.unbonding_time') }}</div>
             </span>
-        </div> 
+        </div>
         <div class="flex">
             <span>
                 <div class="relative w-9 h-9 rounded overflow-hidden flex items-center justify-center mr-2">
@@ -222,7 +222,7 @@ loadAvatars();
             <div class="font-bold">{{ format.percent(slashing.slash_fraction_double_sign) }}</div>
             <div class="text-xs">{{ $t('staking.double_sign_slashing') }}</div>
             </span>
-        </div> 
+        </div>
         <div class="flex">
             <span>
                 <div class="relative w-9 h-9 rounded overflow-hidden flex items-center justify-center mr-2">
@@ -234,7 +234,7 @@ loadAvatars();
             <div class="font-bold">{{ format.percent(slashing.slash_fraction_downtime) }}</div>
             <div class="text-xs">{{ $t('staking.downtime_slashing') }}</div>
             </span>
-        </div>  
+        </div>
     </div>
 
     <div>
@@ -275,7 +275,7 @@ loadAvatars();
                                 class="uppercase"
                                 style="width: 3rem; position: relative"
                             >
-                            {{ $t('staking.rank') }}    
+                            {{ $t('staking.rank') }}
                             </th>
                             <th scope="col" class="uppercase">{{ $t('staking.validator') }}</th>
                             <th scope="col" class="text-right uppercase">{{ $t('staking.voting_power') }}</th>
@@ -326,12 +326,12 @@ loadAvatars();
                                                 class="text-4xl"
                                                 :icon="`mdi-help-circle-outline`"
                                             />
-                                            
+
                                         </div>
                                     </div>
 
                                     <div class="flex flex-col">
-                                        <span class="text-sm text-primary dark:invert whitespace-nowrap overflow-hidden">
+                                        <span class="text-sm text-primary whitespace-nowrap overflow-hidden">
                                             <RouterLink
                                                 :to="{
                                                     name: 'chain-staking-validator',
