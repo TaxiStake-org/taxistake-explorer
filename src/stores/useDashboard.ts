@@ -331,6 +331,8 @@ export const useDashboard = defineStore('dashboard', {
             '../../chains/mainnet/osmosis.json',
             '../../chains/mainnet/quicksilver.json',
             '../../chains/mainnet/umee.json',
+            '../../chains/mainnet/neutron.json',
+            '../../chains/mainnet/stride.json',
           ], { eager: true })
           : import.meta.glob([
             '../../chains/testnet/chain4energy.json',
@@ -342,6 +344,8 @@ export const useDashboard = defineStore('dashboard', {
             '../../chains/testnet/osmosis.json',
             '../../chains/testnet/quicksilver.json',
             '../../chains/testnet/umee.json',
+            '../../chains/mainnet/neutron.json',
+            '../../chains/mainnet/stride.json',
           ], { eager: true });
       Object.values<LocalConfig>(source).forEach((x: LocalConfig) => {
         this.chains[x.chain_name] = fromLocal(x);
