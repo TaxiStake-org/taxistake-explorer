@@ -52,3 +52,11 @@ html[data-theme='dark'] {
   opacity: 0;
   transform: translateY(-calc(15%));
 }
+
+.btn-primary, .router-link-active, .tabs-boxed .tab-active:not(.tab-disabled):not([disabled]) {
+  color: white;
+  font-weight: bold;
+}
+.text-primary {
+  font-weight: bold;
+}
